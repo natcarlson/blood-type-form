@@ -1,0 +1,70 @@
+body {
+  background-color: red;
+}
+
+#bloodtype-section {
+  position: relative;
+  padding-top: 10px;
+  top: 20px;
+  background-color: pink;
+}
+
+header {
+  text-align: center;
+}
+#header-text {
+  text-align: center;
+}
+
+#new-bloodtype-button {
+  background-color: red;
+}
+
+#submit-button {
+  background-color: red;
+  
+}
+
+#all-bloodtypes {
+  margin-left: 30%;
+  margin-right: 30%;
+}
+
+.show-bloodtype {
+  display: inline-block;
+  font-weight: bold;
+  width: 10%;
+}
+
+.show-firstname {
+  position: relative;
+  /*left: 10px;*/
+  display: inline-block;
+  text-decoration: bold;
+  font-weight: bold;
+}
+
+.show-lastname {
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+}
+
+.edit-delete-bloodtype {
+  float: right;
+}
+
+/*#edit-button {
+  height: 8px;
+}
+
+#delete-button {
+  height: 8px;
+}*/
+
+hr {
+  height: 1px;
+  color: solid black;
+  background: black;
+  border: 0;
+}

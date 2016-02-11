@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html ng-app="BloodTypeApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Blood Type</title>
+
+    <!-- stylesheets -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+
+    <!-- scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.js" charset="utf-8"></script>
+    <script src="/js/app.js" charset="utf-8"></script>
+    <script src="/js/controllers/bloodtypes_controller.js" charset="utf-8"></script>
+
+
+  </head>
+  <body>
+
+
+
+    <section id="bloodtype-section" ng-controller="BloodTypeController">
+
+      <header>
+      <h3 id="header-text">Blood Type Form</h3>
+      <!-- <a class="btn modal-trigger" href="#blood-type-modal">What is your blood type?</a> -->
+      <button id="new-bloodtype-button" data-target="new-bloodtype-modal" class="btn modal-trigger">Add a blood type</button>
+      </header>
+
+      <div id="new-bloodtype-modal" class="modal">
+        <div class="modal-content">
+          <h4>Blood Type Form</h4>
+          <form id="blood-type-form" ng-submit="newBloodType()">
+            <input type="text" name="firstname" placeholder="First Name" ng-model="newBloodType.firstname">
+            <input type="text" name="lastname" placeholder="Last Name" ng-model="newBloodType.lastname">
+            <input type="text" name="bloodtype" placeholder="Blood Type" ng-model="newBloodType.bloodtype">
+              <input id="submit-button" type="submit" value="Done" class="btn modal-action modal-close">
+
+            <!-- <div class="modal-footer">
+            </div> -->
+
+          </form>
+        </div>
+      </div>
+
+
+      <br>
+      <br>
+
+
+
+      <!-- <button data-target="edit-bloodtype-modal" class="btn modal-trigger">Edit</button> -->
+
+        <div id="all-bloodtypes">
+          <h5>All Blood Types</h5>
+            <div ng-repeat="entry in bloodtypes" repeat-done="initModals()">
+              <div class="show-bloodtype">
+                <h6> {{ entry.bloodtype }} </h6>
+              </div>
+              <div class="show-firstname">
+                <h6> {{ entry.firstname }} </h6>
+              </div>
+              <div class="show-lastname">
+                <h6> {{ entry.lastname }} </h6>
+              </div>
+              <div class="edit-delete-bloodtype">
+                <button id="edit-bloodtype-button" data-target="edit-bloodtype-modal" class="btn-small modal-trigger" ng-click="editBloodType(bloodType.id)">
+<!-- ng-click="EditBloodType" -->
+                  Edit</button>
+                <!-- <a class="modal-trigger" href="#bloodtype-modal">Edit</a> -->
+                <button id="delete-button" type="button" class="btn-small" ng-click="deleteBloodType(bloodType.id)">Remove</button></h6>
+              </div>
+
+              <!-- <td><a ng-click="editUser(user.id)" class="btn btn-small btn-primary">edit</a></td>
+
+            <td><a ng-click="deleteUser(user.id)" class="btn btn-small btn-danger">delete</a></td> -->
+
+
+
+
+              <hr>
+            </div>
+
+        </div>
+
+
+        <div id="edit-bloodtype-modal" class="modal">
+          <div class="modal-content">
+            <h3>Blood Type Form</h3>
+            <form id="edit-bloodtype-form" ng-submit="updateBloodType()">
+              <input type="text" name="firstname" placeholder="First Name" ng-model="newBloodType.firstname">
+              <input type="text" name="lastname" placeholder="Last Name" ng-model="newBloodType.lastname">
+              <input type="text" name="bloodtype" placeholder="Blood Type" ng-model="newBloodType.bloodtype">
+                <input id="submit-button" type="submit" value="Done" class="btn modal-action modal-close">
+
+              <!-- <div class="modal-footer">
+              </div> -->
+
+            </form>
+          </div>
+        </div>
+
+
+      <br>
+      <br>
+      <br>
+    </section>
+
+  </body>
+</html>
