@@ -8,8 +8,8 @@ app.use(express.static(__dirname + '/client'));
 app.set('views', __dirname + '/client/views')
 app.set('view engine', 'ejs')
 
-var mongoPath = 'mongodb://localhost/bloodtype';
-mongoose.connect(mongoPath);
+// var mongoPath = 'mongodb://localhost/bloodtype';
+mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/bloodtype');
 var db = mongoose.connection;
 db.once( 'open', function(callback) {
   console.log('database connected');
