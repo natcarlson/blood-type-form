@@ -23,7 +23,7 @@ var bloodTypeRouter = require('./server/routes/api/bloodtype');
 app.use('/', indexRouter);
 app.use('/api/bloodtype', bloodTypeRouter);
 
-var port = 8080;
+var port = process.env.PORT || 8080;
 app.listen(port, function() {
   console.log('this ship has sailed on port ' + port);
 });
